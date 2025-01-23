@@ -1,0 +1,32 @@
+# Version of Docker-compose
+version: '3.9'
+services:
+  # Add the node-js service
+  node-server:
+  # Location to the node.js dockerfile
+    build: 
+      context: ./server
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: node-server-container
+    ports:
+       # Host port:Container port
+      - '8080:8080'
+    networks:
+      - roman
+  react-client-ui:
+  # Location to the react.js dockerfile
+    build: 
+      context: ./client-ui
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: react-client-ui-container
+    ports:
+     # Host port:Container port
+      - '3000:3000'
+    networks:
+      - roman
+    stdin_open: true
+  
+networks:
+  roman:
