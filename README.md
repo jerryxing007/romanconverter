@@ -19,7 +19,7 @@ This is a Roman numeral converter that allows you to convert a number (1-3999) t
 ## File structure
 
 root
-├── client
+├── client-ui
 │ ├── node_modules
 │ ├── public
 │ ├── src
@@ -40,7 +40,11 @@ root
 
 ## Dependencies
 
+### server
 1) @express is used as the server as it is simple and easy to use.
 2) @jest and @supertest are used for API testing.
-3) @adobe/react-spectrum is used as a component library as it is a powerful UI tool and super easy to use.
-4) @jest and @testing-library are used for client testing.
+3) @winton is used as logging library as it provides multiple log levels, transport, and structured logging (logs can be found in the automatically generated app.log file). To further centralizing logs in cloud, Elasticsearch (https://www.elastic.co/webinars/introduction-elk-stack) is a good choice, and Grafana (https://grafana.com/) can be used for monitoring application metrics.
+
+### client-ui
+1) @adobe/react-spectrum is used as a component library as it is a powerful UI tool and super easy to use.
+2) @jest and @testing-library are used for client testing.
